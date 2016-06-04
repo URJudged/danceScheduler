@@ -8,15 +8,20 @@ from dance_scheduler import *
 import random
 
 perfs = [Performer(x) for x in 'abcdefghijklmnopqrstuvwxyz']
-print(perfs)
-routs = [Routine(x, random.sample(perfs, int(random.triangular(0,26,8))), int(random.uniform(150,300)))
-	for x in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
-print(perfs)
-sched = Scheduler(random.sample(routs, int(random.uniform(0,26))))
+routs = []
+# for x in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+# 	routs.append(Routine(x, random.sample(perfs, int(random.triangular(0,26,8))), int(random.uniform(150,300))))
 # print(perfs)
-print(routs)
+routs = [Routine(x, random.sample(perfs, int(random.triangular(1,8,4))), int(random.uniform(150,300)))
+	for x in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
+sched = Scheduler(random.sample(routs, 26))
+
+# sched = Scheduler(random.sample(routs, int(random.uniform(0,26))))
+# print(perfs)
+# print(routs)
 # print(sched)
-# sched.sortRoutines()
-# print(perf)
-# print(rout)
-# print(sched) 
+sched.sortRoutines()
+# # print(perf)
+# # print(rout)
+print(sched)
+print(sched.scoreSchedule()) 

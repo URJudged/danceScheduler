@@ -23,8 +23,8 @@ class Performer:
 		self.name = name
 		self.routines = routines
 		for rout in self.routines:
-			if not self in rout:
-				rout.performers.append(self)
+			rout.performers.append(self)
+			rout.performers = list(set(rout.performers))
 
 	## 
 	#  \brief  Formats a performer as a string. Example:
@@ -83,8 +83,8 @@ class Routine:
 		self.duration = duration
 		self.order = order
 		for perf in self.performers:
-			if not self in perf:
-				perf.routines.append(self)
+			perf.routines.append(self)
+			perf.routines = list(set(perf.routines))
 
 	##
 	#  \brief Format a Routine by printing order, name, duration, and performers. Example:
@@ -107,9 +107,6 @@ class Routine:
 	def __contains__(self, perf):
 		return perf in self.performers
 
-	def __contains__(self, rout):
-		return rout in self.routines
-
 	def __lt__(self, other):
 		return self.score() < other.score()
 
@@ -121,6 +118,14 @@ class Routine:
 
 	def __ge__(self, other):
 		return self.score() >= other.score()
+
+	# def __eq__(self, other):
+	# 	if (self.name == other.name and self.energy == other.energy and 
+	# 		self.duration == other.duration and self.order == other.order):
+	# 		for i in range(len(self.performers)):
+	# 			if self.performers[i] != other.performers[i]:
+	# 				return False
+	# 		return True
 
 	##
 	#  \return A string representation of the Routine
@@ -151,7 +156,7 @@ class Routine:
 		for performer in self.performers:
 			if performer in routine.performers:
 				output.append(performer)
-		return output.append
+		return output
 
 	## 
 	#  \return  The score of the routine as an int
@@ -255,7 +260,7 @@ class Scheduler:
 		# relative to each other. Preference only based on energy.
 		if same == []:
 			output = sys.maxsize
-			if math.abs(routInd0 - routInd1) == 1 and not rout0.energy and not rout1.energy:
+			if 	abs(routInd0 - routInd1) == 1 and not rout0.energy and not rout1.energy:
 				output -= 1
 			return output
 
@@ -271,7 +276,7 @@ class Scheduler:
 			else:
 				output += priorityScale * schedule[i].duration
 
-		if math.abs(routInd0 - routInd1) == 1 and not rout0.energy and not rout1.energy:
+		if abs(routInd0 - routInd1) == 1 and not rout0.energy and not rout1.energy:
 			output += rout0.duration + rout1.duration
 
 		return output
@@ -288,14 +293,14 @@ class Scheduler:
 			schedule = self.schedule
 
 		# If a different routine is already in that position, error
-		if schedule[pos] != Routine('',[]) and schedule[pos] != rout:
+		if schedule[pos].name != '' and schedule[pos] != rout:
 			try:
 				raise Exception(self.schedule[pos], rout)
 			except Exception as inst:
 				x,y = inst.args
-				print("Tried to assign multiple routines to the same position")
-				print("Original:\n" + x + "\n")
-				print("Attempted:\n" + y + "\n")
+				print("Tried to score multiple routines in the same position")
+				print("Original:\n" + x.toString() + "\n")
+				print("Attempted:\n" + y.toString() + "\n")
 
 		# Give score based on all scheduled routines
 		score = 0
@@ -303,7 +308,7 @@ class Scheduler:
 			if i == pos or schedule[i] == Routine('',[]):
 				continue
 			else:
-				score += score2routines(i, pos, schedule, schedule[i], rout)
+				score += self.score2routines(i, pos, schedule, schedule[i], rout)
 		return score
 
 
@@ -372,31 +377,40 @@ class Scheduler:
 	#                       correspond to the list self.routines
 	#  \param[in] n         The number of positions the routines should be tried in
 	def sortHelper(self, schedule, unused, n = 3):
-		print(unused)
+		# print("------------------------------------------------------")
 		if unused == []:
 			return schedule
 
 		# Find the highest priority unused routine
-		ind = max(unused, key=lambda x: self.routines[x])
-		rout = self.routines[ind]
+		ind = unused.index(max(unused, key=lambda x: self.routines[x]))
+		rout = self.routines[unused[ind]]
 
 		# Find the n best positions for the routine
-		pos = [0] * n
-		scores = [0] * n
+		pos = [0] * min(n, len(unused))
+		scores = [0] * len(pos)
 
 		for i in range(len(schedule)):
-			if schedule[i] == Routine():
-				score = scoreRoutInSched(rout, i, schedule)
+			# print(i)
+			# print(schedule[i])
+			# print(schedule[i].name == '')
+			if schedule[i].name == '':
+				score = self.scoreRoutInSched(rout, i, schedule)
+				# print("score: ", score)
 
 				# check previous n best
-				for j in range(n):
+				for j in range(len(pos)):
 					if score > scores[j]:
 						scores = scores[:j] + [score] + scores[j+1:-1]
 						pos = pos[:j] + [i] + pos[j+1:-1]
 						break
+		# print(unused[:ind] + unused[ind + 1:])
+		# print([self.routines[i] for i in unused[:ind] + unused[ind + 1:]])
+		# print(schedule)
 
 		scheds = []
-		for i in range(n):
+		# print(pos)
+		# print("===================================================")
+		for i in range(len(pos)):
 			scheds.append(self.sortHelper(schedule[:pos[i]] + [rout] + schedule[pos[i] + 1:],
 				unused[:ind] + unused[ind + 1:]))
 		return max(scheds, key=lambda x: self.scoreSchedule(x))
