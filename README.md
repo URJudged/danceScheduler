@@ -1,2 +1,4 @@
 # danceScheduler
-A scheduler for dance performances that optimizes performers' rest
+A scheduler for dance performances that optimizes performers' rest.
+
+Currently unfinished.
