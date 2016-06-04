@@ -43,21 +43,46 @@ class Performer:
 		output += '  Score: ' + str(self.score()) + '\n'
 		return output
 
+	##
+	#  \brief Overloaded in operator. Checks if the performer is in the routine
+	# 
+	#  \param[in] rout  	The routine
 	def __contains__(self, rout):
 		return rout in self.routines
 
+	##
+	#  \brief Overloaded < operator. Compares the performers' scores
+	# 
+	#  \param[in] other  	The other performer
 	def __lt__(self, other):
 		return self.score() < other.score()
 
+	##
+	#  \brief Overloaded <= operator. Compares the performers' scores
+	# 
+	#  \param[in] other  	The other performer
 	def __le__(self, other):
 		return self.score() <= other.score()
 
+	##
+	#  \brief Overloaded > operator. Compares the performers' scores
+	# 
+	#  \param[in] other  	The other performer
 	def __gt__(self, other):
 		return self.score() > other.score()
 
+	##
+	#  \brief Overloaded >= operator. Compares the performers' scores
+	# 
+	#  \param[in] other  	The other performer
 	def __ge__(self, other):
 		return self.score() >= other.score()
 
+	##
+	#  \brief Gives a score for the performer. Currently based solely on number of 
+	#         routines they are in
+	# 
+	#  \return The score of the performer as an int
 	def score(self):
 		return len(self.routines) * len(self.routines)
 
@@ -107,15 +132,31 @@ class Routine:
 	def __contains__(self, perf):
 		return perf in self.performers
 
+	##
+	#  \brief Overloaded < operator. Compares the routines' scores
+	# 
+	#  \param[in] other  	The other routine
 	def __lt__(self, other):
 		return self.score() < other.score()
 
+	##
+	#  \brief Overloaded <= operator. Compares the routines' scores
+	# 
+	#  \param[in] other  	The other routine
 	def __le__(self, other):
 		return self.score() <= other.score()
 
+	##
+	#  \brief Overloaded > operator. Compares the routines' scores
+	# 
+	#  \param[in] other  	The other routine
 	def __gt__(self, other):
 		return self.score() > other.score()
 
+	##
+	#  \brief Overloaded >= operator. Compares the routines' scores
+	# 
+	#  \param[in] other  	The other routine
 	def __ge__(self, other):
 		return self.score() >= other.score()
 
@@ -375,7 +416,7 @@ class Scheduler:
 	#  \param[in] schedule  A list of ordered routines
 	#  \param[in] unused    A list of indices of routines that are not yet in schedule. The indices
 	#                       correspond to the list self.routines
-	#  \param[in] n         The number of positions the routines should be tried in
+	#  \param[in] n         The number of positions the routines should be tried on.
 	def sortHelper(self, schedule, unused, n = 10):
 		# print("------------------------------------------------------")
 		if unused == []:
@@ -385,17 +426,13 @@ class Scheduler:
 		ind = unused.index(max(unused, key=lambda x: self.routines[x]))
 		rout = self.routines[unused[ind]]
 
-		# Find the n best positions for the routine
+		# Find the n (or however many are left) best positions for the routine
 		pos = [0] * min(n, len(unused))
 		scores = [0] * len(pos)
 
 		for i in range(len(schedule)):
-			# print(i)
-			# print(schedule[i])
-			# print(schedule[i].name == '')
 			if schedule[i].name == '':
 				score = self.scoreRoutInSched(rout, i, schedule)
-				# print("score: ", score)
 
 				# check previous n best
 				for j in range(len(pos)):
@@ -403,13 +440,9 @@ class Scheduler:
 						scores = scores[:j] + [score] + scores[j+1:-1]
 						pos = pos[:j] + [i] + pos[j+1:-1]
 						break
-		# print(unused[:ind] + unused[ind + 1:])
-		# print([self.routines[i] for i in unused[:ind] + unused[ind + 1:]])
-		# print(schedule)
 
+		# Recursively try the schedules with the added routine in different positions
 		scheds = []
-		# print(pos)
-		# print("===================================================")
 		for i in range(len(pos)):
 			scheds.append(self.sortHelper(schedule[:pos[i]] + [rout] + schedule[pos[i] + 1:],
 				unused[:ind] + unused[ind + 1:]))
