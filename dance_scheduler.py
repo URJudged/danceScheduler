@@ -376,7 +376,7 @@ class Scheduler:
 	#  \param[in] unused    A list of indices of routines that are not yet in schedule. The indices
 	#                       correspond to the list self.routines
 	#  \param[in] n         The number of positions the routines should be tried in
-	def sortHelper(self, schedule, unused, n = 3):
+	def sortHelper(self, schedule, unused, n = 10):
 		# print("------------------------------------------------------")
 		if unused == []:
 			return schedule
