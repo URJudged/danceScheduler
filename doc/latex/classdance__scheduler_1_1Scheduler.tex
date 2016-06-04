@@ -1,0 +1,186 @@
+\hypertarget{classdance__scheduler_1_1Scheduler}{\section{dance\-\_\-scheduler.\-Scheduler Class Reference}
+\label{classdance__scheduler_1_1Scheduler}\index{dance\-\_\-scheduler.\-Scheduler@{dance\-\_\-scheduler.\-Scheduler}}
+}
+
+
+Calculates the order of routines optimizing rest for each performer and alternation of energy of routines.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classdance__scheduler_1_1Scheduler_afdba752029f80f09d402165b49b6544a}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+\item 
+\hypertarget{classdance__scheduler_1_1Scheduler_aa92e7ff34cf2efcc1689672465d22ec3}{def {\bfseries \-\_\-\-\_\-repr\-\_\-\-\_\-}}\label{classdance__scheduler_1_1Scheduler_aa92e7ff34cf2efcc1689672465d22ec3}
+
+\item 
+def \hyperlink{classdance__scheduler_1_1Scheduler_aa6f60188574feb9be8f97dfd2633025a}{score2routines}
+\item 
+def \hyperlink{classdance__scheduler_1_1Scheduler_ab909aba83466d0de7bdedf826740f51a}{score\-Rout\-In\-Sched}
+\begin{DoxyCompactList}\small\item\em Scores a schedule given a routine and a position. \end{DoxyCompactList}\item 
+def \hyperlink{classdance__scheduler_1_1Scheduler_aa3579ab4269b6c0e5a55866a7e79145d}{score\-Schedule}
+\begin{DoxyCompactList}\small\item\em Takes into count the amount of rest each performer gets scaled by their priority score as well as reducing the amount of consecutive low energy performances. \end{DoxyCompactList}\item 
+def \hyperlink{classdance__scheduler_1_1Scheduler_a975b54dd7d349b9ebb8b1548e07d498d}{sort\-Routines}
+\begin{DoxyCompactList}\small\item\em Finds a possible schedule for the performance. \end{DoxyCompactList}\item 
+def \hyperlink{classdance__scheduler_1_1Scheduler_a123b6744af9876640bd2c507872fab14}{sort\-Helper}
+\begin{DoxyCompactList}\small\item\em Used by sort\-Routines to recursively determine the schedule. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdance__scheduler_1_1Scheduler_a71a9ce8deff19fae6e2db24d9e8ed27d}{{\bfseries routines}}\label{classdance__scheduler_1_1Scheduler_a71a9ce8deff19fae6e2db24d9e8ed27d}
+
+\item 
+\hypertarget{classdance__scheduler_1_1Scheduler_a40481e815da8a273c308bd5f9e04d053}{{\bfseries schedule}}\label{classdance__scheduler_1_1Scheduler_a40481e815da8a273c308bd5f9e04d053}
+
+\item 
+\hypertarget{classdance__scheduler_1_1Scheduler_a1bcc31b6dbbdbec8d69be8183919321b}{{\bfseries performers}}\label{classdance__scheduler_1_1Scheduler_a1bcc31b6dbbdbec8d69be8183919321b}
+
+\item 
+\hypertarget{classdance__scheduler_1_1Scheduler_a6e515530df653f341e9e00131744f51e}{{\bfseries unused}}\label{classdance__scheduler_1_1Scheduler_a6e515530df653f341e9e00131744f51e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Calculates the order of routines optimizing rest for each performer and alternation of energy of routines. 
+
+\begin{DoxyWarning}{Warning}
+May not find the most optimized schedule 
+\end{DoxyWarning}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classdance__scheduler_1_1Scheduler_afdba752029f80f09d402165b49b6544a}{\index{dance\-\_\-scheduler\-::\-Scheduler@{dance\-\_\-scheduler\-::\-Scheduler}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!dance_scheduler::Scheduler@{dance\-\_\-scheduler\-::\-Scheduler}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Scheduler.\-\_\-\-\_\-init\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{routines = {\ttfamily \mbox{[}\mbox{]}}, }
+\item[{}]{inter\-Length = {\ttfamily 900}, }
+\item[{}]{inter\-Order = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Scheduler_afdba752029f80f09d402165b49b6544a}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em routines} & A list of \hyperlink{classdance__scheduler_1_1Routine}{Routine} objects \\
+\hline
+\mbox{\tt in}  & {\em inter\-Length} & (O\-P\-T\-I\-O\-N\-A\-L) The length of the intermission in seconds as an integer \\
+\hline
+\mbox{\tt in}  & {\em inter\-Order} & (O\-P\-T\-I\-O\-N\-A\-L) The position of the intermission as an int\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+Automatically places the intermission at the midway point in the schedule 
+\end{DoxyRemark}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdance__scheduler_1_1Scheduler_aa6f60188574feb9be8f97dfd2633025a}{\index{dance\-\_\-scheduler\-::\-Scheduler@{dance\-\_\-scheduler\-::\-Scheduler}!score2routines@{score2routines}}
+\index{score2routines@{score2routines}!dance_scheduler::Scheduler@{dance\-\_\-scheduler\-::\-Scheduler}}
+\subsubsection[{score2routines}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Scheduler.\-score2routines (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{rout\-Ind0, }
+\item[{}]{rout\-Ind1, }
+\item[{}]{schedule = {\ttfamily None}, }
+\item[{}]{rout0 = {\ttfamily None}, }
+\item[{}]{rout1 = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Scheduler_aa6f60188574feb9be8f97dfd2633025a}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rout\-Ind0} & The index of the first routine in the scheduler \\
+\hline
+\mbox{\tt in}  & {\em rout\-Ind1} & The index of the second routine in the scheduler \\
+\hline
+\mbox{\tt in}  & {\em schedule} & (O\-P\-T\-I\-O\-N\-A\-L) A proposed schedule. Defaults to the stored on if one isn't given \\
+\hline
+\mbox{\tt in}  & {\em rout0} & (O\-P\-T\-I\-O\-N\-A\-L) The first routine. Necessary if routine hasn't been set in the schedule \\
+\hline
+\mbox{\tt in}  & {\em rout1} & (O\-P\-T\-I\-O\-N\-A\-L) The second routine. Necessary if routine hasn't been set in the schedule \\
+\hline
+\end{DoxyParams}
+\hypertarget{classdance__scheduler_1_1Scheduler_ab909aba83466d0de7bdedf826740f51a}{\index{dance\-\_\-scheduler\-::\-Scheduler@{dance\-\_\-scheduler\-::\-Scheduler}!score\-Rout\-In\-Sched@{score\-Rout\-In\-Sched}}
+\index{score\-Rout\-In\-Sched@{score\-Rout\-In\-Sched}!dance_scheduler::Scheduler@{dance\-\_\-scheduler\-::\-Scheduler}}
+\subsubsection[{score\-Rout\-In\-Sched}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Scheduler.\-score\-Rout\-In\-Sched (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{rout, }
+\item[{}]{pos, }
+\item[{}]{schedule = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Scheduler_ab909aba83466d0de7bdedf826740f51a}
+
+
+Scores a schedule given a routine and a position. 
+
+Should be used to see how well a routine scores at a particular position of the schedule.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rout} & A routine \\
+\hline
+\mbox{\tt in}  & {\em pos} & The position of the routine in the schedule as an int \\
+\hline
+\mbox{\tt in}  & {\em schedule} & The trial schedule as a list of routines \\
+\hline
+\end{DoxyParams}
+\hypertarget{classdance__scheduler_1_1Scheduler_aa3579ab4269b6c0e5a55866a7e79145d}{\index{dance\-\_\-scheduler\-::\-Scheduler@{dance\-\_\-scheduler\-::\-Scheduler}!score\-Schedule@{score\-Schedule}}
+\index{score\-Schedule@{score\-Schedule}!dance_scheduler::Scheduler@{dance\-\_\-scheduler\-::\-Scheduler}}
+\subsubsection[{score\-Schedule}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Scheduler.\-score\-Schedule (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{schedule = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Scheduler_aa3579ab4269b6c0e5a55866a7e79145d}
+
+
+Takes into count the amount of rest each performer gets scaled by their priority score as well as reducing the amount of consecutive low energy performances. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em schedule} & (O\-P\-T\-I\-O\-N\-A\-L) A proposed schedule as a list of routines \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The score for the current permutation as an integer 
+\end{DoxyReturn}
+\hypertarget{classdance__scheduler_1_1Scheduler_a123b6744af9876640bd2c507872fab14}{\index{dance\-\_\-scheduler\-::\-Scheduler@{dance\-\_\-scheduler\-::\-Scheduler}!sort\-Helper@{sort\-Helper}}
+\index{sort\-Helper@{sort\-Helper}!dance_scheduler::Scheduler@{dance\-\_\-scheduler\-::\-Scheduler}}
+\subsubsection[{sort\-Helper}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Scheduler.\-sort\-Helper (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{schedule, }
+\item[{}]{unused, }
+\item[{}]{n = {\ttfamily 10}}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Scheduler_a123b6744af9876640bd2c507872fab14}
+
+
+Used by sort\-Routines to recursively determine the schedule. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em schedule} & A list of ordered routines \\
+\hline
+\mbox{\tt in}  & {\em unused} & A list of indices of routines that are not yet in schedule. The indices correspond to the list self.\-routines \\
+\hline
+\mbox{\tt in}  & {\em n} & The number of positions the routines should be tried on. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classdance__scheduler_1_1Scheduler_a975b54dd7d349b9ebb8b1548e07d498d}{\index{dance\-\_\-scheduler\-::\-Scheduler@{dance\-\_\-scheduler\-::\-Scheduler}!sort\-Routines@{sort\-Routines}}
+\index{sort\-Routines@{sort\-Routines}!dance_scheduler::Scheduler@{dance\-\_\-scheduler\-::\-Scheduler}}
+\subsubsection[{sort\-Routines}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Scheduler.\-sort\-Routines (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Scheduler_a975b54dd7d349b9ebb8b1548e07d498d}
+
+
+Finds a possible schedule for the performance. 
+
+Modifies the stored schedule list in self as well as the routines themselves (only the order) 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/judge/dance\-Scheduler/\hyperlink{dance__scheduler_8py}{dance\-\_\-scheduler.\-py}\end{DoxyCompactItemize}

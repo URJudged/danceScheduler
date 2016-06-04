@@ -1,0 +1,260 @@
+\hypertarget{classdance__scheduler_1_1Routine}{\section{dance\-\_\-scheduler.\-Routine Class Reference}
+\label{classdance__scheduler_1_1Routine}\index{dance\-\_\-scheduler.\-Routine@{dance\-\_\-scheduler.\-Routine}}
+}
+
+
+Stores information about each routine.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classdance__scheduler_1_1Routine_a08301765bb98ffbb23b31aac4bc28580}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+\item 
+def \hyperlink{classdance__scheduler_1_1Routine_a0b14091ce7c687c3af659e5777266fee}{\-\_\-\-\_\-repr\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em Format a \hyperlink{classdance__scheduler_1_1Routine}{Routine} by printing order, name, duration, and performers. \end{DoxyCompactList}\item 
+def \hyperlink{classdance__scheduler_1_1Routine_a4616bcb1f5d1bba69819186e847d519c}{\-\_\-\-\_\-contains\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em Returns whether the performer is in the routine. \end{DoxyCompactList}\item 
+def \hyperlink{classdance__scheduler_1_1Routine_a7838539cdfb72608d391bfc7bfb1da08}{\-\_\-\-\_\-lt\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em Overloaded $<$ operator. \end{DoxyCompactList}\item 
+def \hyperlink{classdance__scheduler_1_1Routine_a07fb060a00d33c365ac89fc5c4519546}{\-\_\-\-\_\-le\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em Overloaded $<$= operator. \end{DoxyCompactList}\item 
+def \hyperlink{classdance__scheduler_1_1Routine_acbfffda403d64937b85414e70d2559c2}{\-\_\-\-\_\-gt\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em Overloaded $>$ operator. \end{DoxyCompactList}\item 
+def \hyperlink{classdance__scheduler_1_1Routine_a0e07be06629e661868f0dd32e9d40cac}{\-\_\-\-\_\-ge\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em Overloaded $>$= operator. \end{DoxyCompactList}\item 
+def \hyperlink{classdance__scheduler_1_1Routine_a159f5bc70530a370ec2465f8cbb919c6}{to\-String}
+\begin{DoxyCompactList}\small\item\em Format a \hyperlink{classdance__scheduler_1_1Routine}{Routine} by printing order, name, duration, and performers. Example\-: \end{DoxyCompactList}\item 
+def \hyperlink{classdance__scheduler_1_1Routine_a101fa9e4936b70938b642248f199d95d}{same\-Performers}
+\begin{DoxyCompactList}\small\item\em Determines if the input routine has a at least one performer in common with self. \end{DoxyCompactList}\item 
+def \hyperlink{classdance__scheduler_1_1Routine_a4fba875fdeff1b21b627dbcad7d4b1fd}{score}
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdance__scheduler_1_1Routine_a350ed26a6b29ae239fed5bfc341c6921}{{\bfseries name}}\label{classdance__scheduler_1_1Routine_a350ed26a6b29ae239fed5bfc341c6921}
+
+\item 
+\hypertarget{classdance__scheduler_1_1Routine_abd63adeeaf42087ca3ffc83871003e0f}{{\bfseries performers}}\label{classdance__scheduler_1_1Routine_abd63adeeaf42087ca3ffc83871003e0f}
+
+\item 
+\hypertarget{classdance__scheduler_1_1Routine_ad0c622e38efb07a92fa9e2894240ba76}{{\bfseries energy}}\label{classdance__scheduler_1_1Routine_ad0c622e38efb07a92fa9e2894240ba76}
+
+\item 
+\hypertarget{classdance__scheduler_1_1Routine_ada284eccd6e4d5fb6e30269c84c5038d}{{\bfseries duration}}\label{classdance__scheduler_1_1Routine_ada284eccd6e4d5fb6e30269c84c5038d}
+
+\item 
+\hypertarget{classdance__scheduler_1_1Routine_aeeb1207380b5309ee9f89f2a9a5da218}{{\bfseries order}}\label{classdance__scheduler_1_1Routine_aeeb1207380b5309ee9f89f2a9a5da218}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores information about each routine. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classdance__scheduler_1_1Routine_a08301765bb98ffbb23b31aac4bc28580}{\index{dance\-\_\-scheduler\-::\-Routine@{dance\-\_\-scheduler\-::\-Routine}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!dance_scheduler::Routine@{dance\-\_\-scheduler\-::\-Routine}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Routine.\-\_\-\-\_\-init\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{name = {\ttfamily ''}, }
+\item[{}]{performers = {\ttfamily \mbox{[}\mbox{]}}, }
+\item[{}]{duration = {\ttfamily sys.maxsize}, }
+\item[{}]{order = {\ttfamily sys.maxsize}, }
+\item[{}]{energy = {\ttfamily True}}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Routine_a08301765bb98ffbb23b31aac4bc28580}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & A name as a string \\
+\hline
+\mbox{\tt in}  & {\em performers} & A list of performers as strings, \\
+\hline
+\mbox{\tt in}  & {\em duration} & (O\-P\-T\-I\-O\-N\-A\-L) the number of seconds in the routine as an int, \\
+\hline
+\mbox{\tt in}  & {\em order} & (O\-P\-T\-I\-O\-N\-A\-L) the routine number in the schedule. If no routine number is specified, one will be determined and assigned to it. \\
+\hline
+\mbox{\tt in}  & {\em energy} & (O\-P\-T\-I\-O\-N\-A\-L) if the routine is high energy, \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdance__scheduler_1_1Routine_a4616bcb1f5d1bba69819186e847d519c}{\index{dance\-\_\-scheduler\-::\-Routine@{dance\-\_\-scheduler\-::\-Routine}!\-\_\-\-\_\-contains\-\_\-\-\_\-@{\-\_\-\-\_\-contains\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-contains\-\_\-\-\_\-@{\-\_\-\-\_\-contains\-\_\-\-\_\-}!dance_scheduler::Routine@{dance\-\_\-scheduler\-::\-Routine}}
+\subsubsection[{\-\_\-\-\_\-contains\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Routine.\-\_\-\-\_\-contains\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{perf}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Routine_a4616bcb1f5d1bba69819186e847d519c}
+
+
+Returns whether the performer is in the routine. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em perf} & The performer \\
+\hline
+\end{DoxyParams}
+\hypertarget{classdance__scheduler_1_1Routine_a0e07be06629e661868f0dd32e9d40cac}{\index{dance\-\_\-scheduler\-::\-Routine@{dance\-\_\-scheduler\-::\-Routine}!\-\_\-\-\_\-ge\-\_\-\-\_\-@{\-\_\-\-\_\-ge\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-ge\-\_\-\-\_\-@{\-\_\-\-\_\-ge\-\_\-\-\_\-}!dance_scheduler::Routine@{dance\-\_\-scheduler\-::\-Routine}}
+\subsubsection[{\-\_\-\-\_\-ge\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Routine.\-\_\-\-\_\-ge\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Routine_a0e07be06629e661868f0dd32e9d40cac}
+
+
+Overloaded $>$= operator. 
+
+Compares the routines' scores
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & The other routine \\
+\hline
+\end{DoxyParams}
+\hypertarget{classdance__scheduler_1_1Routine_acbfffda403d64937b85414e70d2559c2}{\index{dance\-\_\-scheduler\-::\-Routine@{dance\-\_\-scheduler\-::\-Routine}!\-\_\-\-\_\-gt\-\_\-\-\_\-@{\-\_\-\-\_\-gt\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-gt\-\_\-\-\_\-@{\-\_\-\-\_\-gt\-\_\-\-\_\-}!dance_scheduler::Routine@{dance\-\_\-scheduler\-::\-Routine}}
+\subsubsection[{\-\_\-\-\_\-gt\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Routine.\-\_\-\-\_\-gt\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Routine_acbfffda403d64937b85414e70d2559c2}
+
+
+Overloaded $>$ operator. 
+
+Compares the routines' scores
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & The other routine \\
+\hline
+\end{DoxyParams}
+\hypertarget{classdance__scheduler_1_1Routine_a07fb060a00d33c365ac89fc5c4519546}{\index{dance\-\_\-scheduler\-::\-Routine@{dance\-\_\-scheduler\-::\-Routine}!\-\_\-\-\_\-le\-\_\-\-\_\-@{\-\_\-\-\_\-le\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-le\-\_\-\-\_\-@{\-\_\-\-\_\-le\-\_\-\-\_\-}!dance_scheduler::Routine@{dance\-\_\-scheduler\-::\-Routine}}
+\subsubsection[{\-\_\-\-\_\-le\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Routine.\-\_\-\-\_\-le\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Routine_a07fb060a00d33c365ac89fc5c4519546}
+
+
+Overloaded $<$= operator. 
+
+Compares the routines' scores
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & The other routine \\
+\hline
+\end{DoxyParams}
+\hypertarget{classdance__scheduler_1_1Routine_a7838539cdfb72608d391bfc7bfb1da08}{\index{dance\-\_\-scheduler\-::\-Routine@{dance\-\_\-scheduler\-::\-Routine}!\-\_\-\-\_\-lt\-\_\-\-\_\-@{\-\_\-\-\_\-lt\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-lt\-\_\-\-\_\-@{\-\_\-\-\_\-lt\-\_\-\-\_\-}!dance_scheduler::Routine@{dance\-\_\-scheduler\-::\-Routine}}
+\subsubsection[{\-\_\-\-\_\-lt\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Routine.\-\_\-\-\_\-lt\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{other}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Routine_a7838539cdfb72608d391bfc7bfb1da08}
+
+
+Overloaded $<$ operator. 
+
+Compares the routines' scores
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & The other routine \\
+\hline
+\end{DoxyParams}
+\hypertarget{classdance__scheduler_1_1Routine_a0b14091ce7c687c3af659e5777266fee}{\index{dance\-\_\-scheduler\-::\-Routine@{dance\-\_\-scheduler\-::\-Routine}!\-\_\-\-\_\-repr\-\_\-\-\_\-@{\-\_\-\-\_\-repr\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-repr\-\_\-\-\_\-@{\-\_\-\-\_\-repr\-\_\-\-\_\-}!dance_scheduler::Routine@{dance\-\_\-scheduler\-::\-Routine}}
+\subsubsection[{\-\_\-\-\_\-repr\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Routine.\-\_\-\-\_\-repr\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Routine_a0b14091ce7c687c3af659e5777266fee}
+
+
+Format a \hyperlink{classdance__scheduler_1_1Routine}{Routine} by printing order, name, duration, and performers. 
+
+Example\-: 
+\begin{DoxyCode}
+1 5. Dance 1
+2   Duration: 250 seconds
+3   Performers:
+4    * Performer 0
+5    * Performer 1
+\end{DoxyCode}
+
+
+\begin{DoxyRemark}{Remarks}
+Same output as the \hyperlink{classdance__scheduler_1_1Routine_a159f5bc70530a370ec2465f8cbb919c6}{to\-String} function 
+\end{DoxyRemark}
+\hypertarget{classdance__scheduler_1_1Routine_a101fa9e4936b70938b642248f199d95d}{\index{dance\-\_\-scheduler\-::\-Routine@{dance\-\_\-scheduler\-::\-Routine}!same\-Performers@{same\-Performers}}
+\index{same\-Performers@{same\-Performers}!dance_scheduler::Routine@{dance\-\_\-scheduler\-::\-Routine}}
+\subsubsection[{same\-Performers}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Routine.\-same\-Performers (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{routine}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Routine_a101fa9e4936b70938b642248f199d95d}
+
+
+Determines if the input routine has a at least one performer in common with self. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em A} & routine \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of performers in both routines 
+\end{DoxyReturn}
+\hypertarget{classdance__scheduler_1_1Routine_a4fba875fdeff1b21b627dbcad7d4b1fd}{\index{dance\-\_\-scheduler\-::\-Routine@{dance\-\_\-scheduler\-::\-Routine}!score@{score}}
+\index{score@{score}!dance_scheduler::Routine@{dance\-\_\-scheduler\-::\-Routine}}
+\subsubsection[{score}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Routine.\-score (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Routine_a4fba875fdeff1b21b627dbcad7d4b1fd}
+\begin{DoxyReturn}{Returns}
+The score of the routine as an int 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Currently just the summation of performer scores. Will add in duration at some point 
+\end{DoxyNote}
+\hypertarget{classdance__scheduler_1_1Routine_a159f5bc70530a370ec2465f8cbb919c6}{\index{dance\-\_\-scheduler\-::\-Routine@{dance\-\_\-scheduler\-::\-Routine}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!dance_scheduler::Routine@{dance\-\_\-scheduler\-::\-Routine}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}def dance\-\_\-scheduler.\-Routine.\-to\-String (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classdance__scheduler_1_1Routine_a159f5bc70530a370ec2465f8cbb919c6}
+
+
+Format a \hyperlink{classdance__scheduler_1_1Routine}{Routine} by printing order, name, duration, and performers. Example\-: 
+
+\begin{DoxyReturn}{Returns}
+A string representation of the \hyperlink{classdance__scheduler_1_1Routine}{Routine}
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+1 5. Dance 1
+2   Duration: 250 seconds
+3   Performers:
+4    * Performer 0
+5    * Performer 1
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/judge/dance\-Scheduler/\hyperlink{dance__scheduler_8py}{dance\-\_\-scheduler.\-py}\end{DoxyCompactItemize}
