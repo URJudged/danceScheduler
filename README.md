@@ -1,4 +1,7 @@
 # danceScheduler
-A scheduler for dance performances that optimizes performers' rest.
+
+This is meant to be a scheduler for performing arts type performances where
+there are multiple routines with different sets of people. It will try to
+optimize the amount of rest each performer gets.
 
 Currently unfinished.

@@ -1,7 +1,11 @@
 /**
+
 \mainpage
 
 \tableofcontents
 
-This is meant to be a scheduler for performing arts type performances where there are multiple routines with different sets of people. It will try to optimize the amount of rest each performer gets.
+This is meant to be a scheduler for performing arts type performances where there are multiple
+routines with different sets of people. It will try to optimize the amount of rest each performer
+gets.
+
 */

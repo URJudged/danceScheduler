@@ -80,7 +80,7 @@ class Performer:
 
 	##
 	#  \brief Gives a score for the performer. Currently based solely on number of 
-	#         routines they are in
+	#         routines they are in. Scaling and other factors may change.
 	# 
 	#  \return The score of the performer as an int
 	def score(self):
