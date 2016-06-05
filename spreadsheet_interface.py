@@ -27,3 +27,4 @@ def readFile(filename):
 #  \todo Figure out what the data will look like
 #  \todo Store the data.
 def extractData(data):
+	

@@ -8,5 +8,6 @@ var searchData=
   ['scoreroutinsched',['scoreRoutInSched',['../classdance__scheduler_1_1Scheduler.html#ab909aba83466d0de7bdedf826740f51a',1,'dance_scheduler::Scheduler']]],
   ['scoreschedule',['scoreSchedule',['../classdance__scheduler_1_1Scheduler.html#aa3579ab4269b6c0e5a55866a7e79145d',1,'dance_scheduler::Scheduler']]],
   ['sorthelper',['sortHelper',['../classdance__scheduler_1_1Scheduler.html#a123b6744af9876640bd2c507872fab14',1,'dance_scheduler::Scheduler']]],
-  ['sortroutines',['sortRoutines',['../classdance__scheduler_1_1Scheduler.html#a975b54dd7d349b9ebb8b1548e07d498d',1,'dance_scheduler::Scheduler']]]
+  ['sortroutines',['sortRoutines',['../classdance__scheduler_1_1Scheduler.html#a975b54dd7d349b9ebb8b1548e07d498d',1,'dance_scheduler::Scheduler']]],
+  ['spreadsheet_5finterface_2epy',['spreadsheet_interface.py',['../spreadsheet__interface_8py.html',1,'']]]
 ];
